@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\CareCard;
+namespace App\Http\Controllers\AbdulWahabQarizada;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
 
-class OperationsController extends Controller
+class JobsManagementController extends Controller
 {
 
 
@@ -37,7 +37,7 @@ class OperationsController extends Controller
   public function Index()
   {
 
-    return view('CardCard.Operations.Index');
+    return view('AbdulWahabQarizada.JobsManagement.Index');
   }
 
 
@@ -74,7 +74,7 @@ class OperationsController extends Controller
         ->where("qamar_care_cards.Created_By", "=", Auth::user()->id)
         ->get();
     }
-    return view('CardCard.Operations.All', ['qamarcarecards' => $qamarcarecards, 'countries' => $countries, 'whatqamarcandos' => $whatqamarcandos, 'genders' => $genders, 'tribes' => $tribes, 'languages' => $languages, 'currentjobs' => $currentjobs, 'futurejobs' => $futurejobs, 'educationlevels' => $educationlevels, 'provinces' => $provinces, 'relationships' => $relationships, 'incomestreams' => $incomestreams, 'familystatus' => $familystatus]);
+    return view('AbdulWahabQarizada.JobsManagement.All', ['qamarcarecards' => $qamarcarecards, 'countries' => $countries, 'whatqamarcandos' => $whatqamarcandos, 'genders' => $genders, 'tribes' => $tribes, 'languages' => $languages, 'currentjobs' => $currentjobs, 'futurejobs' => $futurejobs, 'educationlevels' => $educationlevels, 'provinces' => $provinces, 'relationships' => $relationships, 'incomestreams' => $incomestreams, 'familystatus' => $familystatus]);
   }
 
   public function Pending()

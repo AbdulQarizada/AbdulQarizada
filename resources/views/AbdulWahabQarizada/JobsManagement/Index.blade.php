@@ -1,6 +1,6 @@
 @extends('layouts.master-layouts')
 
-@section('title') Qamar Care List @endsection
+@section('title') Jobs Management @endsection
 
 @section('css')
 <link href="{{ URL::asset('/assets/css/mystyle/tabstyle.css') }}" rel="stylesheet" type="text/css" />
@@ -10,7 +10,7 @@
 
 <div class="row mt-4">
     <div class="col-4">
-        <a href="{{route('IndexCareCard')}}" class="btn btn-info btn-lg waves-effect mb-3 btn-label waves-light"><i class="bx bx-left-arrow  font-size-16 label-icon"></i>Back</a>
+        <a href="{{route('IndexAbdulWahabQarizada')}}" class="btn btn-info btn-lg waves-effect mb-3 btn-label waves-light"><i class="bx bx-left-arrow  font-size-16 label-icon"></i>Back</a>
         <!-- <span class="my-0   card-title fw-medium font-size-24 text-wrap"><i class="bx bx-caret-right text-secondary font-size-20"></i> CARE CARDS</span> -->
     </div>
 </div>
@@ -19,7 +19,7 @@
 <div class="row">
     <div class="mt-4 mb-4">
         <blockquote class="blockquote border-dark  font-size-14 mb-0">
-            <p class="my-0   fw-medium text-dark text-muted card-title font-size-24 text-wrap">CARE CARD OPERATIONS</p>
+            <p class="my-0   fw-medium text-dark text-muted card-title font-size-24 text-wrap text-uppercase">Jobs Management</p>
 
         </blockquote>
     </div>
@@ -35,8 +35,8 @@
                             <blockquote class="blockquote font-size-14 mb-0">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="my-0 text-primary card-title fw-medium">All CARE CARDS</p>
-                                        <h6 class="text-muted mb-0">All CARE CARDS</h4>
+                                        <p class="my-0 text-primary card-title fw-medium text-uppercase">All jobs</p>
+                                        <h6 class="text-muted mb-0">All Jobs</h4>
                                     </div>
 
                                     <div class="flex-shrink-0 align-self-center">
@@ -64,8 +64,8 @@
                             <blockquote class="blockquote font-size-14 mb-0">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="my-0 text-primary card-title fw-medium">PENDING CARE CARDS</p>
-                                        <h6 class="text-muted mb-0">PENDING CARE CARDS</h4>
+                                        <p class="my-0 text-primary card-title fw-medium text-uppercase">New</p>
+                                        <h6 class="text-muted mb-0">New jobs</h4>
                                     </div>
 
                                     <div class="flex-shrink-0 align-self-center">
@@ -96,8 +96,8 @@
                                 <div class="d-flex">
 
                                     <div class="flex-grow-1">
-                                        <p class="my-0 text-primary card-title fw-medium">APPROVED CARE CARDS</p>
-                                        <h6 class="text-muted mb-0">APPROVED CARE CARDS</h4>
+                                        <p class="my-0 text-primary card-title fw-medium  text-uppercase">Applied</p>
+                                        <h6 class="text-muted mb-0">Applied jobs</h4>
                                     </div>
                                     <div class="flex-shrink-0 align-self-center">
                                         <div class="mini-stat-icon avatar-sm rounded-circle ">
@@ -127,8 +127,8 @@
                             <blockquote class="blockquote font-size-14 mb-0">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="my-0 text-primary card-title fw-medium">PRINTED CARE CARDS</p>
-                                        <h6 class="text-muted mb-0">All Printed Care Cards</h4>
+                                        <p class="my-0 text-primary card-title fw-medium text-uppercase">Shortlisted</p>
+                                        <h6 class="text-muted mb-0">Shortlisted</h4>
                                     </div>
 
                                     <div class="flex-shrink-0 align-self-center">
@@ -159,8 +159,8 @@
                             <blockquote class="blockquote font-size-14 mb-0">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="my-0 text-primary card-title fw-medium">RELEASED CARE CARDS</p>
-                                        <h6 class="text-muted mb-0">All Released Care Cards</h4>
+                                        <p class="my-0 text-primary card-title fw-medium  text-uppercase">Offer Recieved</p>
+                                        <h6 class="text-muted mb-0">Offer Recieved</h4>
                                     </div>
 
                                     <div class="flex-shrink-0 align-self-center">
@@ -191,8 +191,8 @@
                             <blockquote class="blockquote font-size-14 mb-0">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="my-0 text-primary card-title fw-medium">REJECTED CARE CARDS</p>
-                                        <h6 class="text-muted mb-0">All Rejected Care Cards</h4>
+                                        <p class="my-0 text-primary card-title fw-medium  text-uppercase">Ignored</p>
+                                        <h6 class="text-muted mb-0">Ignored jobs</h4>
                                     </div>
 
                                     <div class="flex-shrink-0 align-self-center">

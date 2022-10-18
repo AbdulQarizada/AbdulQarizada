@@ -25,7 +25,7 @@
     </div>
     <div class="col-xl-12">
         <div class="row">
-         
+
             <div class="col-md-4 mb-2">
                 <a href="{{route('AllUser')}}">
                     <div class="card-one mini-stats-wid border border-secondary">
@@ -54,6 +54,97 @@
                     </div>
                 </a>
             </div>
+            @if(Auth::user()->IsSuperAdmin == 1)
+            <div class="col-md-4 mb-2">
+                <a data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">
+                    <div class="card-one  mini-stats-wid border border-secondary">
+                        <div class="card-body">
+                            <blockquote class="blockquote font-size-14 mb-0">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="my-0 text-primary card-title fw-semibold">ADD LOOK UPS</p>
+                                        <!-- <h6 class="text-muted mb-0">Monthly Reports</h4> -->
+                                    </div>
+
+                                    <div class="flex-shrink-0 align-self-center">
+                                        <div class="mini-stat-icon avatar-sm rounded-circle ">
+                                            <span class="avatar-title bg-info">
+                                                <i class="bx bxs-report  font-size-24"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mt-4">
+
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- center modal -->
+
+                    <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">ADD LOOK UP</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+
+                                    <form class="needs-validation" action="{{route('CreateLookups')}}" method="POST" enctype="multipart/form-data" novalidate>
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="mb-3 position-relative">
+                                                    <label for="Parent_Name" class="form-label">Main Catagory <i class="mdi mdi-asterisk text-danger"></i></label>
+                                                    <div class="input-group">
+
+                                                        <select class="form-select  form-select-lg @error('Parent_Name') is-invalid @enderror" value="{{ old('Parent_Name') }}" required id="Parent_Name" name="Parent_Name">
+                                                            <!-- <option value="None">Main Catagory</option> -->
+
+                                                            @foreach($catagorys as $catagory)
+                                                            <option value="{{ $catagory -> Name}}">{{ $catagory -> Name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('Parent_Name')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="mb-3 position-relative">
+                                                    <label for="Name" class="form-label ">Name<i class="mdi mdi-asterisk text-danger"></i></label>
+                                                    <input type="text" class="form-control form-control-lg @error('Name') is-invalid @enderror" value="{{ old('Name') }}" id="Name" name="Name" required>
+                                                    @error('Name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <button class="btn btn-success btn-lg" type="submit">Save </button>
+                                        <a class="btn btn-danger btn-lg" href="{{route('root')}}">Cancel</a>
+                                    </form>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                    <!-- end card -->
+                </div>
+            </div>
+            @endif
 
             <!-- <div class="col-md-4 mb-2">
                 <a href="{{route('AllSponsor')}}">
@@ -131,9 +222,9 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                       
+
                     </div>
                     </blockquote>
                 </div>
@@ -152,7 +243,7 @@
 <div class="mt-4 mb-4">
                       <blockquote class="blockquote border-primary  font-size-14 mb-0">
                                 <p class="my-0   fw-medium text-dark text-muted card-title font-size-24 text-wrap">OPERATIONS</p>
-                        
+
                         </blockquote>
     </div>
 <div class="col-xl-12">
@@ -176,7 +267,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
                     </div>
                     </blockquote>
@@ -204,9 +295,9 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="d-flex mt-4">
-                            
+
                         </div>
                         </blockquote>
                     </div>
@@ -232,7 +323,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
                     </div>
                     </blockquote>
@@ -240,8 +331,8 @@
             </div>
             </a>
         </div>
-            
-   
+
+
      <div class="col-md-4 mb-2">
             <a href="{{route('ReleasedQamarCareCard')}}">
             <div class="card-one  mini-stats-wid border border-secondary">
@@ -261,7 +352,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
                     </div>
                     </blockquote>
@@ -269,12 +360,12 @@
             </div>
             </a>
         </div>
-            
-   
-       
-   
 
-  
+
+
+
+
+
 
 
 
@@ -286,11 +377,11 @@
 <div class="mt-4 mb-4">
                       <blockquote class="blockquote border-primary  font-size-14 mb-0">
                                 <p class="my-0   fw-medium text-dark text-muted card-title font-size-24 text-wrap">SERVICES</p>
-                        
+
                         </blockquote>
     </div>
 <div class="col-xl-12">
-    <div class="row">      
+    <div class="row">
 
     <div class="col-md-4 mb-2">
         <a href="{{route('AssigningServiceQamarCareCard')}}">
@@ -311,9 +402,9 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                       
+
                     </div>
                     </blockquote>
                 </div>
@@ -321,7 +412,7 @@
             </a>
         </div>
 
-     
+
 
         <div class="col-md-4 mb-2">
         <a  href="#">
@@ -342,15 +433,15 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                        
+
                     </div>
                     </blockquote>
                 </div>
             </div>
             </a>
-        </div> 
+        </div>
 
         <div class="col-md-4 mb-2">
         <a  href="#">
@@ -371,15 +462,15 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                        
+
                     </div>
                     </blockquote>
                 </div>
             </div>
             </a>
-        </div> 
+        </div>
 
 
     </div> -->
@@ -391,11 +482,11 @@
 <div class="mt-4 mb-4">
                       <blockquote class="blockquote border-primary  font-size-14 mb-0">
                                 <p class="my-0   fw-medium text-dark text-muted card-title font-size-24 text-wrap">BAD CARE CARDS</p>
-                        
+
                         </blockquote>
     </div>
 <div class="col-xl-12">
-    <div class="row">      
+    <div class="row">
 
     <div class="col-md-4 mb-2">
         <a href="{{route('RejectedQamarCareCard')}}">
@@ -416,9 +507,9 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                       
+
                     </div>
                     </blockquote>
                 </div>
@@ -445,15 +536,15 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                        
+
                     </div>
                     </blockquote>
                 </div>
             </div>
             </a>
-        </div> 
+        </div>
 
         <div class="col-md-4 mb-2">
         <a  href="#">
@@ -474,15 +565,15 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                        
+
                     </div>
                     </blockquote>
                 </div>
             </div>
             </a>
-        </div> 
+        </div>
     </div> -->
 <!-- end row -->
 
@@ -493,7 +584,7 @@
     <div class="mt-4 mb-4">
         <!-- <blockquote class="blockquote border-primary  font-size-14 mb-0">
                                 <p class="my-0   fw-medium text-dark text-muted card-title font-size-24 text-wrap">ONLINE</p>
-                        
+
                         </blockquote> -->
     </div>
     <div class="col-xl-12">
@@ -520,15 +611,15 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                        
+
                     </div>
                     </blockquote>
                 </div>
             </div>
             </a>
-        </div> 
+        </div>
 
         <div class="col-md-4 mb-2">
         <a  href="{{route('VerifyQamarCareCard')}}">
@@ -549,9 +640,9 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="d-flex mt-4">
-                        
+
                     </div>
                     </blockquote>
                 </div>

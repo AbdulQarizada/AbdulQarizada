@@ -14,23 +14,23 @@
     <link href="<?php echo e(URL::asset('/assets/css/icons.min.css')); ?>" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="<?php echo e(URL::asset('/assets/css/app.min.css')); ?>" id="app-style" rel="stylesheet" type="text/css" />
-    
+
     <?php echo $__env->yieldContent('css'); ?>
 
 </head>
 
 <?php $__env->startSection('body'); ?>
     <body  data-topbar="dark" data-layout="horizontal">
-      
-   
+
+
 
 <?php echo $__env->yieldSection(); ?>
 <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <!-- Begin page -->
     <div id="layout-wrapper">
-    
-   
+
+
         <?php echo $__env->make('layouts.horizontal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- ============================================================== -->
         <!-- Start right Content here -->

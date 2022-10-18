@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\CareCard;
+namespace App\Http\Controllers\AbdulWahabQarizada;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -30,7 +30,7 @@ class HomeController extends Controller
   public function Index()
   {
 
-    return view('CardCard.Index');
+    return view('AbdulWahabQarizada.Index');
   }
 
   // FileUpload

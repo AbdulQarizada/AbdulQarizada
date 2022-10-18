@@ -1,6 +1,6 @@
 @extends('layouts.master-layouts')
 
-@section('title') Qamar Care List @endsection
+@section('title') All Jobs @endsection
 
 @section('css')
 <!-- DataTables -->
@@ -13,89 +13,14 @@
 
 <div class="row mt-4">
     <div class="col-4">
-        <a href="{{route('IndexAssignServiceQamarCareCard')}}" class="btn btn-info btn-lg waves-effect mb-3 btn-label waves-light"><i class="bx bx-left-arrow  font-size-16 label-icon"></i>Back</a>
-        <span class="my-0   card-title fw-medium font-size-24 text-wrap"><i class="bx bx-caret-right text-secondary font-size-20"></i>FOOD PACKS</span>
+        <a href="{{route('IndexJobsManagement')}}" class="btn btn-info btn-lg waves-effect mb-3 btn-label waves-light"><i class="bx bx-left-arrow  font-size-16 label-icon"></i>Back</a>
+        <span class="my-0   card-title fw-medium font-size-24 text-wrap"><i class="bx bx-caret-right text-secondary font-size-20 text-uppercase"></i>Jobs</span>
     </div>
 </div>
 <div class="row">
-
-
-</div>
-<div class="row">
-    <div class="col-md-2">
-        <div class="mb-3 position-relative">
-            <label for="Province_ID" class="form-label">Province</label>
-            <div class="input-group">
-                <select class="form-select Province form-select-lg @error('Province_ID') is-invalid @enderror" required name="Province_ID" value="{{ old('Province_ID') }}" id="Province_ID">
-                    <option value="">Select Your Province</option>
-                    @foreach($provinces as $province)
-                    <option value="{{ $province -> id}}">{{ $province -> Name}}</option>
-
-                    @endforeach
-
-                </select>
-                @error('Province_ID')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
-        </div>
+    <div class="col-12 ">
+        <a href="{{route('CreateCareCard')}}" class="btn btn-success btn-lg waves-effect  waves-light mb-3 float-end btn-rounded"><i class="mdi mdi-plus me-1"></i>Refresh</a>
     </div>
-    <div class="col-md-2">
-        <div class="mb-3 position-relative">
-            <label for="District_ID" class="form-label">District</label>
-            <div class="input-group">
-                <select class="form-select  District form-select-lg @error('District_ID') is-invalid @enderror" required name="District_ID" value="{{ old('District_ID') }}" id="District_ID">
-                    <option value="">Select Your District</option>
-
-
-                </select>
-                @error('District_ID')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
-        </div>
-    </div>
-    <div class="col-md-2">
-        <div class="mb-3 position-relative">
-            <label for="FamilyStatus_ID" class="form-label">Family Status</label>
-            <div class="input-group">
-
-                <select class="form-select form-select-lg @error('FamilyStatus_ID') is-invalid @enderror" value="{{ old('FamilyStatus_ID') }}" required name="FamilyStatus_ID" id="FamilyStatus_ID">
-                    <option value="">Select Your Family Status</option>
-                    @foreach($familystatus as $familystatu)
-                    <option value="{{ $familystatu -> id}}">{{ $familystatu -> Name}}</option>
-
-                    @endforeach
-                </select>
-                @error('FamilyStatus_ID')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
-        </div>
-
-    </div>
-    <div class="col-md-2">
-        <div class="mb-3 position-relative">
-            <label for="LevelPoverty" class="form-label">Level Of Poverty</label>
-            <div class="rating-star">
-                <input type="hidden" class="rating @error('LevelPoverty') is-invalid @enderror" value="{{ old('LevelPoverty') }}" data-filled="mdi mdi-star text-warning " data-empty="mdi mdi-star-outline text-muted" name="LevelPoverty" id="LevelPoverty" />
-                @error('LevelPoverty')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
-        </div>
-    </div>
-    <!-- <div class="col-12 ">
-        <a href="{{route('CreateQamarCareCard')}}" class="btn btn-success btn-lg waves-effect  waves-light mb-3 float-end btn-rounded"><i class="mdi mdi-plus me-1"></i>ADD CARE CARD</a>
-     </div> -->
 </div>
 
 <div class="row">
@@ -117,7 +42,6 @@
                                 <th>Family Status</th>
                                 <th>Status</th>
                                 <th>Created By</th>
-                                <th>Selected</th>
                                 <th>Actions</th>
 
                             </tr>
@@ -137,7 +61,7 @@
                                     <div>
                                         <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$qamarcarecard -> ProvinceName}}</a></h5>
                                         <p class="text-muted mb-0">{{$qamarcarecard -> DistrictName}}</p>
-                                        <!-- <p class="text-muted mb-0">{{$qamarcarecard -> Village}}</p> -->
+                                        <p class="text-muted mb-0">{{$qamarcarecard -> Village}}</p>
 
                                     </div>
                                 </td>
@@ -253,19 +177,15 @@
                                     @endif
                                 </td>
                                 <td>
-
-                                        <input class="form-check-input" type="checkbox" id="formCheck1">
-                                </td>
-                                <td>
                                     <div class="d-flex flex-wrap gap-2">
-                                        <a href="{{route('StatusQamarCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-warning waves-effect waves-light">
+                                        <a href="{{route('StatusCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-warning waves-effect waves-light">
                                             <i class="bx bx-show-alt font-size-16 align-middle"></i>
                                         </a>
                                         @if($qamarcarecard -> Status == 'Pending')
-                                        <a href="{{route('EditQamarCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-info waves-effect waves-light">
+                                        <a href="{{route('EditCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-info waves-effect waves-light">
                                             <i class="bx bx-edit  font-size-16 align-middle"></i>
                                         </a>
-                                        <a href="{{route('DeleteQamarCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
+                                        <a href="{{route('DeleteCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
                                             <i class=" bx bx-trash-alt font-size-16 align-middle"></i>
                                         </a>
                                         @endif
@@ -273,22 +193,22 @@
 
                                         @if( $qamarcarecard -> Status == 'Approved')
 
-                                        <a href="{{route('PrintingQamarCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-dark waves-effect waves-light print">
+                                        <a href="{{route('PrintingCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-dark waves-effect waves-light print">
                                             <i class="bx bxs-printer   font-size-16 align-middle"></i>
                                         </a>
                                         @endif
 
                                         @if( $qamarcarecard -> Status == 'Rejected')
-                                        <a href="{{route('EditQamarCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-info waves-effect waves-light">
+                                        <a href="{{route('EditCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-info waves-effect waves-light">
                                             <i class="bx bx-edit  font-size-16 align-middle"></i>
                                         </a>
-                                        <a href="{{route('DeleteQamarCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
+                                        <a href="{{route('DeleteCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
                                             <i class=" bx bx-trash-alt font-size-16 align-middle"></i>
                                         </a>
                                         @endif
 
                                         @if($qamarcarecard -> Status == 'Printed')
-                                        <a href="{{route('ReleaseQamarCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-success waves-effect waves-light release">
+                                        <a href="{{route('ReleaseCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-success waves-effect waves-light release">
                                             <i class="bx bx-user-check  font-size-16 align-middle"></i>
                                         </a>
                                         @endif
@@ -304,32 +224,12 @@
 
                         </tbody>
                     </table>
-
                 </div>
-
             </div>
 
         </div>
-        <a href="{{route('ReleaseQamarCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-success waves-effect waves-light release float-end">
-                                            Assign To Food Package
-                                        </a>
     </div> <!-- end col -->
 </div> <!-- end row -->
-
-<!-- <table id="example" class="display example" style="width:100%">
-        <thead>
-            <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-        <tbody></tboday>
-
-    </table> -->
 
 @endsection
 @section('script')
