@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title> @yield('title') | Qamar Foundation</title>
+        <title> @yield('title') | Qarizada Space</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -19,9 +19,9 @@
     <link href="{{ URL::asset('/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
     @include('sweetalert::alert')
   </head>
-  
+
     @yield('body')
-    
+
     @yield('content')
 
     @include('layouts.vendor-scripts')
