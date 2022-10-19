@@ -177,40 +177,8 @@
                                 </td>
                                 <td>
                                     <div class="d-flex flex-wrap gap-2">
-                                        <a href="{{route('StatusCareCard', ['data' => $job -> id])}}" class="btn btn-warning waves-effect waves-light">
-                                            <i class="bx bx-show-alt font-size-16 align-middle"></i>
-                                        </a>
-                                        @if($job -> Status == 'Pending')
-                                        <a href="{{route('EditCareCard', ['data' => $job -> id])}}" class="btn btn-info waves-effect waves-light">
-                                            <i class="bx bx-edit  font-size-16 align-middle"></i>
-                                        </a>
-                                        <a href="{{route('DeleteCareCard', ['data' => $job -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
-                                            <i class=" bx bx-trash-alt font-size-16 align-middle"></i>
-                                        </a>
-                                        @endif
 
 
-                                        @if( $job -> Status == 'Approved')
-
-                                        <a href="{{route('PrintingCareCard', ['data' => $job -> id])}}" class="btn btn-dark waves-effect waves-light print">
-                                            <i class="bx bxs-printer   font-size-16 align-middle"></i>
-                                        </a>
-                                        @endif
-
-                                        @if( $job -> Status == 'Rejected')
-                                        <a href="{{route('EditCareCard', ['data' => $job -> id])}}" class="btn btn-info waves-effect waves-light">
-                                            <i class="bx bx-edit  font-size-16 align-middle"></i>
-                                        </a>
-                                        <a href="{{route('DeleteCareCard', ['data' => $job -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
-                                            <i class=" bx bx-trash-alt font-size-16 align-middle"></i>
-                                        </a>
-                                        @endif
-
-                                        @if($job -> Status == 'Printed')
-                                        <a href="{{route('ReleaseCareCard', ['data' => $job -> id])}}" class="btn btn-success waves-effect waves-light release">
-                                            <i class="bx bx-user-check  font-size-16 align-middle"></i>
-                                        </a>
-                                        @endif
 
 
 

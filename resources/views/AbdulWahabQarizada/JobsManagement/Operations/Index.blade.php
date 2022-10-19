@@ -29,7 +29,7 @@
         <div class="row">
 
             <div class="col-md-4 mb-2">
-                <a href="{{route('AllCareCard')}}">
+                <a href="{{route('AllJobs')}}">
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
                             <blockquote class="blockquote font-size-14 mb-0">
@@ -58,7 +58,7 @@
             </div>
 
             <!-- <div class="col-md-4 mb-2">
-                <a href="{{route('PendingCareCard')}}">
+                <a >
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
                             <blockquote class="blockquote font-size-14 mb-0">
@@ -88,7 +88,7 @@
                 </a>
             </div>
             <div class="col-md-4 mb-2">
-                <a href="{{route('ApprovedCareCard')}}">
+                <a >
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
 
@@ -121,7 +121,7 @@
 
 
             <div class="col-md-4 mb-2">
-                <a href="{{route('PrintedCareCard')}}">
+                <a >
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
                             <blockquote class="blockquote font-size-14 mb-0">
@@ -153,7 +153,7 @@
 
 
             <div class="col-md-4 mb-2">
-                <a href="{{route('ReleasedCareCard')}}">
+                <a >
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
                             <blockquote class="blockquote font-size-14 mb-0">
@@ -185,7 +185,7 @@
 
 
             <div class="col-md-4 mb-2">
-                <a href="{{route('RejectedCareCard')}}">
+                <a >
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
                             <blockquote class="blockquote font-size-14 mb-0">

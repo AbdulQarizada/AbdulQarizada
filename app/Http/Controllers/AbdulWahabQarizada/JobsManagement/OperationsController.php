@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\AbdulWahabQarizada;
+namespace App\Http\Controllers\AbdulWahabQarizada\JobsManagement;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
 
-class JobsManagementController extends Controller
+class OperationsController extends Controller
 {
 
 
@@ -34,7 +34,7 @@ class JobsManagementController extends Controller
   public function Index()
   {
 
-    return view('AbdulWahabQarizada.JobsManagement.Index');
+    return view('AbdulWahabQarizada.JobsManagement.Operations.Index');
   }
 
 
@@ -44,8 +44,10 @@ class JobsManagementController extends Controller
 
 
       $jobs =   Jobs::get();
-      return view('AbdulWahabQarizada.JobsManagement.All', ['jobs' => $jobs]);
+      return view('AbdulWahabQarizada.JobsManagement.Operations.All', ['jobs' => $jobs]);
   }
+
+
 
 
 

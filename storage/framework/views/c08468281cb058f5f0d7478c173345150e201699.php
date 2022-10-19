@@ -29,7 +29,7 @@
         <div class="row">
 
             <div class="col-md-4 mb-2">
-                <a href="<?php echo e(route('AllCareCard')); ?>">
+                <a href="<?php echo e(route('AllJobs')); ?>">
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
                             <blockquote class="blockquote font-size-14 mb-0">
@@ -230,4 +230,4 @@
 
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.master-layouts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\TheDeveloper\Desktop\Projects\AbdulQarizada\resources\views/AbdulWahabQarizada/JobsManagement/Index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master-layouts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\TheDeveloper\Desktop\Projects\AbdulQarizada\resources\views/AbdulWahabQarizada/JobsManagement/Operations/Index.blade.php ENDPATH**/ ?>

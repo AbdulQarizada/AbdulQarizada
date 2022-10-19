@@ -63,39 +63,11 @@ Route::post('/Employees_Profile', [App\Http\Controllers\HomeController::class, '
 // Index
 Route::get('/AbdulWahabQarizada', [App\Http\Controllers\AbdulWahabQarizada\HomeController::class, 'Index'])->name('IndexAbdulWahabQarizada');
 
-// Operation
+// JobManagment
 // Index
-Route::get('/AbdulWahabQarizada/JobsManagement', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Index'])->name('IndexJobsManagement');
+Route::get('/AbdulWahabQarizada/JobsManagement/Operations', [App\Http\Controllers\AbdulWahabQarizada\JobsManagement\OperationsController::class, 'Index'])->name('IndexJobsManagement');
 // List
-Route::get('/AbdulWahabQarizada/Operations/All', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'All'])->name('AllCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Pending', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Pending'])->name('PendingCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Approved', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Approved'])->name('ApprovedCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Printed', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Printed'])->name('PrintedCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Released', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Released'])->name('ReleasedCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Rejected', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Rejected'])->name('RejectedCareCard');
-// Change Status
-Route::get('/AbdulWahabQarizada/Operations/Status/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Status'])->name('StatusCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Approve/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Approve'])->name('ApproveCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Print/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Print'])->name('PrintCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Release/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Release'])->name('ReleaseCareCard');
-Route::get('/AbdulWahabQarizada/Operations/Reject/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Reject'])->name('RejectCareCard');
-Route::get('/AbdulWahabQarizada/Operations/ReInitiate/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'ReInitiate'])->name('ReInitiateCareCard');
-// Create
-Route::get('/AbdulWahabQarizada/Operations/Create', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Create'])->name('CreateCareCard');
-Route::post('/AbdulWahabQarizada/Operations/Create', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Store'])->name('CreateCareCard');
-// Update
-Route::get('/AbdulWahabQarizada/Operations/Edit/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Edit'])->name('EditCareCard');
-Route::put('/AbdulWahabQarizada/Operations/Edit/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Update'])->name('UpdateCareCard');
-// Delete
-Route::get('/AbdulWahabQarizada/Operations/Delete/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Delete'])->name('DeleteCareCard');
-// Print
-Route::get('/AbdulWahabQarizada/Operations/Printing/{data}', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Printing'])->name('PrintingCareCard');
-// Verify Card
-Route::get('/AbdulWahabQarizada/Operations/Verify', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Verify'])->name('VerifyCareCard');
-Route::post('/AbdulWahabQarizada/Operations/Verify', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Search'])->name('SearchCareCard');
-// FileUploads
-Route::post('/AbdulWahabQarizada/Operations/Beneficiaries_Tazkira', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Beneficiaries_Tazkira'])->name('Beneficiaries_Tazkira');
-Route::post('/AbdulWahabQarizada/Operations/Beneficiaries_Profile', [App\Http\Controllers\AbdulWahabQarizada\JobsManagementController::class, 'Beneficiaries_Profile'])->name('Beneficiaries_Profile');
+Route::get('/AbdulWahabQarizada/JobsManagement/Operations/All', [App\Http\Controllers\AbdulWahabQarizada\JobsManagement\OperationsController::class, 'All'])->name('AllJobs');
 
 
 

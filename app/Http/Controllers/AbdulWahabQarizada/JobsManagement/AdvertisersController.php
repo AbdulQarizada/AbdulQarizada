@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\AbdulWahabQarizada;
+namespace App\Http\Controllers\AbdulWahabQarizada\JobsManagement;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DataTables;
+use App\Models\Jobs;
+use Auth;
 
 use App\Models\Location;
 use App\Models\LookUp;
@@ -15,17 +18,28 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
 
-class HomeController extends Controller
+class AdvertisersController extends Controller
 {
 
 
 
-  // index
-  public function Index()
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+
+
+
+
+  // Scrapper for Jobs.af
+  public function JobsAF()
   {
 
-    return view('AbdulWahabQarizada.Index');
+
   }
+
+
+
 
 
 }
