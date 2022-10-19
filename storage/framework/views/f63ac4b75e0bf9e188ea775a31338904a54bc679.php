@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title> <?php echo $__env->yieldContent('title'); ?> | Qamar Foundation</title>
+        <title> <?php echo $__env->yieldContent('title'); ?> | Qarizada Space</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
@@ -19,9 +19,9 @@
     <link href="<?php echo e(URL::asset('/assets/css/app.min.css')); ?>" id="app-style" rel="stylesheet" type="text/css" />
     <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   </head>
-  
+
     <?php echo $__env->yieldContent('body'); ?>
-    
+
     <?php echo $__env->yieldContent('content'); ?>
 
     <?php echo $__env->make('layouts.vendor-scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
