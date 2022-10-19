@@ -2,11 +2,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                <script>document.write(new Date().getFullYear())</script> © Qamar Foundation.
+                <script>document.write(new Date().getFullYear())</script> © Qarizada.
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-end d-none d-sm-block">
-                    Design & Develop by Qamar MIS Team
+                    Design & Develop by Abdul Wahab Qarizada
                 </div>
             </div>
         </div>

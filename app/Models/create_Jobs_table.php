@@ -5,18 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ScholarshipModule extends Model
+class create_Jobs_table extends Model
 {
     use HasFactory;
-    protected $fillable =
-    [    
-   
-       'Parent_ID',
-       'ModuleName',
-   
-
-
-
-
-    ];
 }

@@ -19,7 +19,7 @@
 </div>
 <div class="row">
     <div class="col-12 ">
-        <a href="{{route('CreateCareCard')}}" class="btn btn-success btn-lg waves-effect  waves-light mb-3 float-end btn-rounded"><i class="mdi mdi-plus me-1"></i>Refresh</a>
+        <a href="javascript:window.location.reload();" class="btn btn-success btn-lg waves-effect  waves-light mb-3 float-end btn-rounded"><i class="mdi mdi-cloud-refresh me-1"></i>Refresh</a>
     </div>
 </div>
 
@@ -49,33 +49,32 @@
 
 
                         <tbody>
-                            @foreach($qamarcarecards as $qamarcarecard)
+                            @foreach($jobs as $job)
                             <tr>
-                                <!-- <td>{{ $qamarcarecard->id }}</td> -->
-                                <td>{{$loop->iteration}}</td>
+                                <td>{{ $job->id }}</td>
+                                <!-- <td>{{$loop->iteration}}</td> -->
                                 <td>
-                                    <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$qamarcarecard -> FirstName}} {{$qamarcarecard -> LastName}}</a></h5>
-                                    <p class="text-muted mb-0">QCC-{{$qamarcarecard -> QCC}}</p>
+                                    <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$job -> FirstName}} {{$job -> LastName}}</a></h5>
+                                    <p class="text-muted mb-0">QCC-{{$job -> QCC}}</p>
                                 </td>
                                 <td>
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$qamarcarecard -> ProvinceName}}</a></h5>
-                                        <p class="text-muted mb-0">{{$qamarcarecard -> DistrictName}}</p>
-                                        <p class="text-muted mb-0">{{$qamarcarecard -> Village}}</p>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$job -> ProvinceName}}</a></h5>
+                                        <p class="text-muted mb-0">{{$job -> DistrictName}}</p>
 
                                     </div>
                                 </td>
                                 <td>
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark badge badge-soft-primary">{{$qamarcarecard -> PrimaryNumber}}</a></h5>
-                                        <p class="text-muted mb-0 badge badge-soft-warning">{{$qamarcarecard -> SecondaryNumber}}</p>
-                                        <p class="text-muted mb-0 badge badge-soft-danger">{{$qamarcarecard -> RelativeNumber}}</p>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark badge badge-soft-primary">{{$job -> PrimaryNumber}}</a></h5>
+                                        <p class="text-muted mb-0 badge badge-soft-warning">{{$job -> SecondaryNumber}}</p>
+                                        <p class="text-muted mb-0 badge badge-soft-danger">{{$job -> RelativeNumber}}</p>
                                     </div>
                                 </td>
                                 <td>
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$qamarcarecard -> FamilyStatus}}</a></h5>
-                                        @if( $qamarcarecard -> LevelPoverty == 1)
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$job -> FamilyStatus}}</a></h5>
+                                        @if( $job -> LevelPoverty == 1)
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-secondary font-size-14"></i>
                                         <i class="bx bxs-star text-secondary font-size-16"></i>
@@ -83,28 +82,28 @@
                                         <i class="bx bxs-star text-secondary font-size-20"></i>
 
                                         @endif
-                                        @if( $qamarcarecard -> LevelPoverty == 2)
+                                        @if( $job -> LevelPoverty == 2)
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-warning font-size-14"></i>
                                         <i class="bx bxs-star text-secondary font-size-16"></i>
                                         <i class="bx bxs-star text-secondary font-size-18"></i>
                                         <i class="bx bxs-star text-secondary font-size-20"></i>
                                         @endif
-                                        @if( $qamarcarecard -> LevelPoverty == 3)
+                                        @if( $job -> LevelPoverty == 3)
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-warning font-size-14"></i>
                                         <i class="bx bxs-star text-warning font-size-16"></i>
                                         <i class="bx bxs-star text-secondary font-size-18"></i>
                                         <i class="bx bxs-star text-secondary font-size-20"></i>
                                         @endif
-                                        @if( $qamarcarecard -> LevelPoverty == 4)
+                                        @if( $job -> LevelPoverty == 4)
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-warning font-size-14"></i>
                                         <i class="bx bxs-star text-warning font-size-16"></i>
                                         <i class="bx bxs-star text-warning font-size-18"></i>
                                         <i class="bx bxs-star text-secondary font-size-20"></i>
                                         @endif
-                                        @if( $qamarcarecard -> LevelPoverty == 5)
+                                        @if( $job -> LevelPoverty == 5)
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-warning font-size-14"></i>
                                         <i class="bx bxs-star text-warning font-size-16"></i>
@@ -118,56 +117,56 @@
                                     <div>
 
 
-                                        @if($qamarcarecard -> Status == 'Pending')
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-secondary">{{$qamarcarecard -> Status}}</a></h5>
-                                        <p class="text-muted mb-0">{{$qamarcarecard -> created_at -> format("d-m-Y")}}</p>
+                                        @if($job -> Status == 'Pending')
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-secondary">{{$job -> Status}}</a></h5>
+                                        <p class="text-muted mb-0">{{$qamjobarcarecard -> created_at -> format("d-m-Y")}}</p>
 
                                         @endif
 
-                                        @if($qamarcarecard -> Status == 'Approved')
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success">{{$qamarcarecard -> Status}} </a></h5>
-                                        <p class="text-muted mb-0">{{$qamarcarecard -> created_at -> format("d-m-Y")}}</p>
+                                        @if($job -> Status == 'Approved')
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success">{{$job -> Status}} </a></h5>
+                                        <p class="text-muted mb-0">{{$job -> created_at -> format("d-m-Y")}}</p>
 
                                         @endif
 
-                                        @if($qamarcarecard -> Status == 'Rejected')
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-danger">{{$qamarcarecard -> Status}} </a></h5>
-                                        <p class="text-muted mb-0">{{$qamarcarecard -> created_at -> format("d-m-Y")}}</p>
+                                        @if($job -> Status == 'Rejected')
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-danger">{{$job -> Status}} </a></h5>
+                                        <p class="text-muted mb-0">{{$job -> created_at -> format("d-m-Y")}}</p>
 
                                         @endif
 
 
 
-                                        @if($qamarcarecard -> Status == 'ReInitiated')
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-info">{{$qamarcarecard -> Status}}</a></h5>
-                                        <p class="text-muted mb-0">{{$qamarcarecard -> created_at -> format("d-m-Y")}}</p>
+                                        @if($job -> Status == 'ReInitiated')
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-info">{{$job -> Status}}</a></h5>
+                                        <p class="text-muted mb-0">{{$job -> created_at -> format("d-m-Y")}}</p>
 
                                         @endif
 
-                                        @if($qamarcarecard -> Status == 'Released')
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success">{{$qamarcarecard -> Status}}</a></h5>
-                                        <p class="text-muted mb-0">{{$qamarcarecard -> created_at -> format("d-m-Y")}}</p>
+                                        @if($job -> Status == 'Released')
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success">{{$job -> Status}}</a></h5>
+                                        <p class="text-muted mb-0">{{$job -> created_at -> format("d-m-Y")}}</p>
 
                                         @endif
 
-                                        @if($qamarcarecard -> Status == 'Printed')
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-dark">{{$qamarcarecard -> Status}}</a></h5>
-                                        <p class="text-muted mb-0">{{$qamarcarecard -> created_at -> format("d-m-Y")}}</p>
+                                        @if($job -> Status == 'Printed')
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-dark">{{$job -> Status}}</a></h5>
+                                        <p class="text-muted mb-0">{{$job -> created_at -> format("d-m-Y")}}</p>
 
                                         @endif
 
                                     </div>
                                 </td>
                                 <td>
-                                    @if( $qamarcarecard -> Created_By !="")
+                                    @if( $job -> Created_By !="")
 
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$qamarcarecard ->  UFirstName }} {{$qamarcarecard ->  ULastName }}</a></h5>
-                                        <p class="text-muted mb-0">{{$qamarcarecard ->  UJob }}</p>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{$job ->  UFirstName }} {{$job ->  ULastName }}</a></h5>
+                                        <p class="text-muted mb-0">{{$job ->  UJob }}</p>
 
                                     </div>
                                     @endif
-                                    @if( $qamarcarecard -> Created_By =="")
+                                    @if( $job -> Created_By =="")
 
                                     <div>
                                         <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">Anonymous</a></h5>
@@ -178,37 +177,37 @@
                                 </td>
                                 <td>
                                     <div class="d-flex flex-wrap gap-2">
-                                        <a href="{{route('StatusCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-warning waves-effect waves-light">
+                                        <a href="{{route('StatusCareCard', ['data' => $job -> id])}}" class="btn btn-warning waves-effect waves-light">
                                             <i class="bx bx-show-alt font-size-16 align-middle"></i>
                                         </a>
-                                        @if($qamarcarecard -> Status == 'Pending')
-                                        <a href="{{route('EditCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-info waves-effect waves-light">
+                                        @if($job -> Status == 'Pending')
+                                        <a href="{{route('EditCareCard', ['data' => $job -> id])}}" class="btn btn-info waves-effect waves-light">
                                             <i class="bx bx-edit  font-size-16 align-middle"></i>
                                         </a>
-                                        <a href="{{route('DeleteCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
+                                        <a href="{{route('DeleteCareCard', ['data' => $job -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
                                             <i class=" bx bx-trash-alt font-size-16 align-middle"></i>
                                         </a>
                                         @endif
 
 
-                                        @if( $qamarcarecard -> Status == 'Approved')
+                                        @if( $job -> Status == 'Approved')
 
-                                        <a href="{{route('PrintingCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-dark waves-effect waves-light print">
+                                        <a href="{{route('PrintingCareCard', ['data' => $job -> id])}}" class="btn btn-dark waves-effect waves-light print">
                                             <i class="bx bxs-printer   font-size-16 align-middle"></i>
                                         </a>
                                         @endif
 
-                                        @if( $qamarcarecard -> Status == 'Rejected')
-                                        <a href="{{route('EditCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-info waves-effect waves-light">
+                                        @if( $job -> Status == 'Rejected')
+                                        <a href="{{route('EditCareCard', ['data' => $job -> id])}}" class="btn btn-info waves-effect waves-light">
                                             <i class="bx bx-edit  font-size-16 align-middle"></i>
                                         </a>
-                                        <a href="{{route('DeleteCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
+                                        <a href="{{route('DeleteCareCard', ['data' => $job -> id])}}" class="btn btn-danger waves-effect waves-light delete-confirm">
                                             <i class=" bx bx-trash-alt font-size-16 align-middle"></i>
                                         </a>
                                         @endif
 
-                                        @if($qamarcarecard -> Status == 'Printed')
-                                        <a href="{{route('ReleaseCareCard', ['data' => $qamarcarecard -> id])}}" class="btn btn-success waves-effect waves-light release">
+                                        @if($job -> Status == 'Printed')
+                                        <a href="{{route('ReleaseCareCard', ['data' => $job -> id])}}" class="btn btn-success waves-effect waves-light release">
                                             <i class="bx bx-user-check  font-size-16 align-middle"></i>
                                         </a>
                                         @endif

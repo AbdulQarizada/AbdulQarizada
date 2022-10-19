@@ -19,7 +19,7 @@
 </div>
 <div class="row">
     <div class="col-12 ">
-        <a href="<?php echo e(route('CreateCareCard')); ?>" class="btn btn-success btn-lg waves-effect  waves-light mb-3 float-end btn-rounded"><i class="mdi mdi-plus me-1"></i>Refresh</a>
+        <a href="javascript:window.location.reload();" class="btn btn-success btn-lg waves-effect  waves-light mb-3 float-end btn-rounded"><i class="mdi mdi-cloud-refresh me-1"></i>Refresh</a>
     </div>
 </div>
 
@@ -49,33 +49,32 @@
 
 
                         <tbody>
-                            <?php $__currentLoopData = $qamarcarecards; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $qamarcarecard): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php $__currentLoopData = $jobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                                <!-- <td><?php echo e($qamarcarecard->id); ?></td> -->
-                                <td><?php echo e($loop->iteration); ?></td>
+                                <td><?php echo e($job->id); ?></td>
+                                <!-- <td><?php echo e($loop->iteration); ?></td> -->
                                 <td>
-                                    <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($qamarcarecard -> FirstName); ?> <?php echo e($qamarcarecard -> LastName); ?></a></h5>
-                                    <p class="text-muted mb-0">QCC-<?php echo e($qamarcarecard -> QCC); ?></p>
+                                    <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> FirstName); ?> <?php echo e($job -> LastName); ?></a></h5>
+                                    <p class="text-muted mb-0">QCC-<?php echo e($job -> QCC); ?></p>
                                 </td>
                                 <td>
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($qamarcarecard -> ProvinceName); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard -> DistrictName); ?></p>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard -> Village); ?></p>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> ProvinceName); ?></a></h5>
+                                        <p class="text-muted mb-0"><?php echo e($job -> DistrictName); ?></p>
 
                                     </div>
                                 </td>
                                 <td>
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark badge badge-soft-primary"><?php echo e($qamarcarecard -> PrimaryNumber); ?></a></h5>
-                                        <p class="text-muted mb-0 badge badge-soft-warning"><?php echo e($qamarcarecard -> SecondaryNumber); ?></p>
-                                        <p class="text-muted mb-0 badge badge-soft-danger"><?php echo e($qamarcarecard -> RelativeNumber); ?></p>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark badge badge-soft-primary"><?php echo e($job -> PrimaryNumber); ?></a></h5>
+                                        <p class="text-muted mb-0 badge badge-soft-warning"><?php echo e($job -> SecondaryNumber); ?></p>
+                                        <p class="text-muted mb-0 badge badge-soft-danger"><?php echo e($job -> RelativeNumber); ?></p>
                                     </div>
                                 </td>
                                 <td>
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($qamarcarecard -> FamilyStatus); ?></a></h5>
-                                        <?php if( $qamarcarecard -> LevelPoverty == 1): ?>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> FamilyStatus); ?></a></h5>
+                                        <?php if( $job -> LevelPoverty == 1): ?>
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-secondary font-size-14"></i>
                                         <i class="bx bxs-star text-secondary font-size-16"></i>
@@ -83,28 +82,28 @@
                                         <i class="bx bxs-star text-secondary font-size-20"></i>
 
                                         <?php endif; ?>
-                                        <?php if( $qamarcarecard -> LevelPoverty == 2): ?>
+                                        <?php if( $job -> LevelPoverty == 2): ?>
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-warning font-size-14"></i>
                                         <i class="bx bxs-star text-secondary font-size-16"></i>
                                         <i class="bx bxs-star text-secondary font-size-18"></i>
                                         <i class="bx bxs-star text-secondary font-size-20"></i>
                                         <?php endif; ?>
-                                        <?php if( $qamarcarecard -> LevelPoverty == 3): ?>
+                                        <?php if( $job -> LevelPoverty == 3): ?>
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-warning font-size-14"></i>
                                         <i class="bx bxs-star text-warning font-size-16"></i>
                                         <i class="bx bxs-star text-secondary font-size-18"></i>
                                         <i class="bx bxs-star text-secondary font-size-20"></i>
                                         <?php endif; ?>
-                                        <?php if( $qamarcarecard -> LevelPoverty == 4): ?>
+                                        <?php if( $job -> LevelPoverty == 4): ?>
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-warning font-size-14"></i>
                                         <i class="bx bxs-star text-warning font-size-16"></i>
                                         <i class="bx bxs-star text-warning font-size-18"></i>
                                         <i class="bx bxs-star text-secondary font-size-20"></i>
                                         <?php endif; ?>
-                                        <?php if( $qamarcarecard -> LevelPoverty == 5): ?>
+                                        <?php if( $job -> LevelPoverty == 5): ?>
                                         <i class="bx bxs-star text-warning font-size-12"></i>
                                         <i class="bx bxs-star text-warning font-size-14"></i>
                                         <i class="bx bxs-star text-warning font-size-16"></i>
@@ -118,56 +117,56 @@
                                     <div>
 
 
-                                        <?php if($qamarcarecard -> Status == 'Pending'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-secondary"><?php echo e($qamarcarecard -> Status); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard -> created_at -> format("d-m-Y")); ?></p>
+                                        <?php if($job -> Status == 'Pending'): ?>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-secondary"><?php echo e($job -> Status); ?></a></h5>
+                                        <p class="text-muted mb-0"><?php echo e($qamjobarcarecard -> created_at -> format("d-m-Y")); ?></p>
 
                                         <?php endif; ?>
 
-                                        <?php if($qamarcarecard -> Status == 'Approved'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success"><?php echo e($qamarcarecard -> Status); ?> </a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard -> created_at -> format("d-m-Y")); ?></p>
+                                        <?php if($job -> Status == 'Approved'): ?>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success"><?php echo e($job -> Status); ?> </a></h5>
+                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
 
                                         <?php endif; ?>
 
-                                        <?php if($qamarcarecard -> Status == 'Rejected'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-danger"><?php echo e($qamarcarecard -> Status); ?> </a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard -> created_at -> format("d-m-Y")); ?></p>
+                                        <?php if($job -> Status == 'Rejected'): ?>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-danger"><?php echo e($job -> Status); ?> </a></h5>
+                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
 
                                         <?php endif; ?>
 
 
 
-                                        <?php if($qamarcarecard -> Status == 'ReInitiated'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-info"><?php echo e($qamarcarecard -> Status); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard -> created_at -> format("d-m-Y")); ?></p>
+                                        <?php if($job -> Status == 'ReInitiated'): ?>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-info"><?php echo e($job -> Status); ?></a></h5>
+                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
 
                                         <?php endif; ?>
 
-                                        <?php if($qamarcarecard -> Status == 'Released'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success"><?php echo e($qamarcarecard -> Status); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard -> created_at -> format("d-m-Y")); ?></p>
+                                        <?php if($job -> Status == 'Released'): ?>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success"><?php echo e($job -> Status); ?></a></h5>
+                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
 
                                         <?php endif; ?>
 
-                                        <?php if($qamarcarecard -> Status == 'Printed'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-dark"><?php echo e($qamarcarecard -> Status); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard -> created_at -> format("d-m-Y")); ?></p>
+                                        <?php if($job -> Status == 'Printed'): ?>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-dark"><?php echo e($job -> Status); ?></a></h5>
+                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
 
                                         <?php endif; ?>
 
                                     </div>
                                 </td>
                                 <td>
-                                    <?php if( $qamarcarecard -> Created_By !=""): ?>
+                                    <?php if( $job -> Created_By !=""): ?>
 
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($qamarcarecard ->  UFirstName); ?> <?php echo e($qamarcarecard ->  ULastName); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamarcarecard ->  UJob); ?></p>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job ->  UFirstName); ?> <?php echo e($job ->  ULastName); ?></a></h5>
+                                        <p class="text-muted mb-0"><?php echo e($job ->  UJob); ?></p>
 
                                     </div>
                                     <?php endif; ?>
-                                    <?php if( $qamarcarecard -> Created_By ==""): ?>
+                                    <?php if( $job -> Created_By ==""): ?>
 
                                     <div>
                                         <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">Anonymous</a></h5>
@@ -178,37 +177,37 @@
                                 </td>
                                 <td>
                                     <div class="d-flex flex-wrap gap-2">
-                                        <a href="<?php echo e(route('StatusCareCard', ['data' => $qamarcarecard -> id])); ?>" class="btn btn-warning waves-effect waves-light">
+                                        <a href="<?php echo e(route('StatusCareCard', ['data' => $job -> id])); ?>" class="btn btn-warning waves-effect waves-light">
                                             <i class="bx bx-show-alt font-size-16 align-middle"></i>
                                         </a>
-                                        <?php if($qamarcarecard -> Status == 'Pending'): ?>
-                                        <a href="<?php echo e(route('EditCareCard', ['data' => $qamarcarecard -> id])); ?>" class="btn btn-info waves-effect waves-light">
+                                        <?php if($job -> Status == 'Pending'): ?>
+                                        <a href="<?php echo e(route('EditCareCard', ['data' => $job -> id])); ?>" class="btn btn-info waves-effect waves-light">
                                             <i class="bx bx-edit  font-size-16 align-middle"></i>
                                         </a>
-                                        <a href="<?php echo e(route('DeleteCareCard', ['data' => $qamarcarecard -> id])); ?>" class="btn btn-danger waves-effect waves-light delete-confirm">
+                                        <a href="<?php echo e(route('DeleteCareCard', ['data' => $job -> id])); ?>" class="btn btn-danger waves-effect waves-light delete-confirm">
                                             <i class=" bx bx-trash-alt font-size-16 align-middle"></i>
                                         </a>
                                         <?php endif; ?>
 
 
-                                        <?php if( $qamarcarecard -> Status == 'Approved'): ?>
+                                        <?php if( $job -> Status == 'Approved'): ?>
 
-                                        <a href="<?php echo e(route('PrintingCareCard', ['data' => $qamarcarecard -> id])); ?>" class="btn btn-dark waves-effect waves-light print">
+                                        <a href="<?php echo e(route('PrintingCareCard', ['data' => $job -> id])); ?>" class="btn btn-dark waves-effect waves-light print">
                                             <i class="bx bxs-printer   font-size-16 align-middle"></i>
                                         </a>
                                         <?php endif; ?>
 
-                                        <?php if( $qamarcarecard -> Status == 'Rejected'): ?>
-                                        <a href="<?php echo e(route('EditCareCard', ['data' => $qamarcarecard -> id])); ?>" class="btn btn-info waves-effect waves-light">
+                                        <?php if( $job -> Status == 'Rejected'): ?>
+                                        <a href="<?php echo e(route('EditCareCard', ['data' => $job -> id])); ?>" class="btn btn-info waves-effect waves-light">
                                             <i class="bx bx-edit  font-size-16 align-middle"></i>
                                         </a>
-                                        <a href="<?php echo e(route('DeleteCareCard', ['data' => $qamarcarecard -> id])); ?>" class="btn btn-danger waves-effect waves-light delete-confirm">
+                                        <a href="<?php echo e(route('DeleteCareCard', ['data' => $job -> id])); ?>" class="btn btn-danger waves-effect waves-light delete-confirm">
                                             <i class=" bx bx-trash-alt font-size-16 align-middle"></i>
                                         </a>
                                         <?php endif; ?>
 
-                                        <?php if($qamarcarecard -> Status == 'Printed'): ?>
-                                        <a href="<?php echo e(route('ReleaseCareCard', ['data' => $qamarcarecard -> id])); ?>" class="btn btn-success waves-effect waves-light release">
+                                        <?php if($job -> Status == 'Printed'): ?>
+                                        <a href="<?php echo e(route('ReleaseCareCard', ['data' => $job -> id])); ?>" class="btn btn-success waves-effect waves-light release">
                                             <i class="bx bx-user-check  font-size-16 align-middle"></i>
                                         </a>
                                         <?php endif; ?>

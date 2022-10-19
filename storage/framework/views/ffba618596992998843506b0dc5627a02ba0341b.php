@@ -42,7 +42,7 @@
                                     <div class="flex-shrink-0 align-self-center">
                                         <div class="mini-stat-icon avatar-sm rounded-circle ">
                                             <span class="avatar-title bg-warning">
-                                                <i class="bx bx-id-card   font-size-24"></i>
+                                                <i class="bx bx-list-ol    font-size-24"></i>
                                             </span>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                 </a>
             </div>
 
-            <div class="col-md-4 mb-2">
+            <!-- <div class="col-md-4 mb-2">
                 <a href="<?php echo e(route('PendingCareCard')); ?>">
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
@@ -71,7 +71,7 @@
                                     <div class="flex-shrink-0 align-self-center">
                                         <div class="mini-stat-icon avatar-sm rounded-circle ">
                                             <span class="avatar-title bg-info">
-                                                <!-- <i class="bx bxs-user-rectangle    font-size-24"></i> -->
+                                                <i class="bx bxs-user-rectangle    font-size-24"></i>
                                                 <h1 class="mb-0 text-white">1</h1>
 
                                             </span>
@@ -102,7 +102,7 @@
                                     <div class="flex-shrink-0 align-self-center">
                                         <div class="mini-stat-icon avatar-sm rounded-circle ">
                                             <span class="avatar-title bg-info">
-                                                <!-- <i class="bx bxs-user-rectangle    font-size-24"></i> -->
+                                                 <i class="bx bxs-user-rectangle    font-size-24"></i>
                                                 <h1 class="mb-0 text-white">2</h1>
                                             </span>
                                         </div>
@@ -134,7 +134,7 @@
                                     <div class="flex-shrink-0 align-self-center">
                                         <div class="mini-stat-icon avatar-sm rounded-circle ">
                                             <span class="avatar-title bg-info">
-                                                <!-- <i class="bx bxs-user-rectangle    font-size-24"></i> -->
+                                                 <i class="bx bxs-user-rectangle    font-size-24"></i>
                                                 <h1 class="mb-0 text-white">3</h1>
 
                                             </span>
@@ -166,7 +166,7 @@
                                     <div class="flex-shrink-0 align-self-center">
                                         <div class="mini-stat-icon avatar-sm rounded-circle ">
                                             <span class="avatar-title bg-info">
-                                                <!-- <i class="bx bxs-user-rectangle    font-size-24"></i> -->
+                                                <i class="bx bxs-user-rectangle    font-size-24"></i>
                                                 <h1 class="mb-0 text-white">4</h1>
 
                                             </span>
@@ -199,7 +199,7 @@
                                         <div class="mini-stat-icon avatar-sm rounded-circle ">
                                             <span class="avatar-title bg-danger">
                                                 <i class="bx bx-block text-white  font-size-24"></i>
-                                                <!-- <h1 class="mb-0 text-danger">5</h1> -->
+                                                 <h1 class="mb-0 text-danger">5</h1>
 
                                             </span>
                                         </div>
@@ -213,7 +213,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
 
 
         </div>

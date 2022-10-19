@@ -17,8 +17,9 @@
                     <img src="{{ URL::asset('/assets/images/logo.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                    <img src="{{ URL::asset('/assets/images/side_logo.png') }}" alt="" height="45">
-                    </span>
+                    <!-- <img src="{{ URL::asset('/assets/images/side_logo.png') }}" alt="" height="45"> -->
+                    Qarizada Space
+                </span>
                 </a>
             </div>
 
@@ -35,11 +36,11 @@
             </form>
 
             <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
-       
+
                 <div class="dropdown-menu dropdown-megamenu">
                     <div class="row">
                         <div class="col-sm-8">
-    
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <h5 class="font-size-14 mt-0" key="t-ui-components">@lang('translation.UI_Components')</h5>
@@ -116,7 +117,7 @@
                                         <li>
                                             <a href="javascript:void(0);" key="t-faqs">@lang('translation.FAQs')</a>
                                         </li>
-                            
+
                                     </ul>
                                 </div>
                             </div>
@@ -162,8 +163,8 @@
                 </div>
             </div>
         </div>
-    
-        @if (Auth::check()) 
+
+        @if (Auth::check())
         <div class="d-flex">
 
             <div class="dropdown d-inline-block d-lg-none ml-2">
@@ -173,12 +174,12 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-search-dropdown">
-                    
+
                     <form class="p-3">
                         <div class="form-group m-0">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="@lang('translation.Search')" aria-label="Search input">
-                                
+
                                 <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
                             </div>
                         </div>
@@ -186,7 +187,7 @@
                 </div>
             </div>
 
-         
+
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
@@ -222,16 +223,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </a> 
+                        </a>
                     </div>
                     <div class="p-2 border-top d-grid">
                         <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
-                            <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">@lang('translation.View_More')</span> 
+                            <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">@lang('translation.View_More')</span>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -243,16 +244,16 @@
                 <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->Profile) ? asset('/uploads/User/Sponsors/Profiles/'.Auth::user() -> Profile) : asset('/uploads/User/avatar-1.png') }}"
                     alt="Profile">
                 @endif
-                
+
                 <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(Auth::user()->FullName)}}</span>
-                
-                
-                
+
+
+
                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
-               <a class="dropdown-item" href="{{route('EditUser', ['data' => Auth::user()->id])}}"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">@lang('translation.Profile')</span></a>
+               <!-- <a class="dropdown-item" href="{{route('EditUser', ['data' => Auth::user()->id])}}"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">@lang('translation.Profile')</span></a> -->
                 <!-- <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">@lang('translation.My_Wallet')</span></a>
                 <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">@lang('translation.Settings')</span></a>
                 -->
@@ -264,7 +265,7 @@
                 </form>
             </div>
         </div>
-            
+
         </div>
         @endif
     </div>
@@ -288,7 +289,7 @@
                         <a class="nav-link dropdown-toggle arrow-none" href="{{route('Projects')}}" id="topnav-uielement" role="button"
                             >
                             <i class="bx bx-tone me-2"></i>
-                            <span key="t-ui-elements"> Projects</span> 
+                            <span key="t-ui-elements"> Projects</span>
                             <!-- <div class="arrow-down"></div> -->
                         </a>
                     </li>
@@ -298,7 +299,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="{{route('BeneficiariesServices')}}" id="topnav-pages" role="button"
                             >
-                            <i class="bx bx-customize me-2"></i><span key="t-apps">Beneficiaries Services</span> 
+                            <i class="bx bx-customize me-2"></i><span key="t-apps">Beneficiaries Services</span>
                             <!-- <div class="arrow-down"></div> -->
                         </a>
                     </li>
@@ -308,7 +309,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-more" role="button"
                             >
-                            <i class="bx bx-file me-2"></i><span key="t-extra-pages">System Management</span> 
+                            <i class="bx bx-file me-2"></i><span key="t-extra-pages">System Management</span>
                             <div class="arrow-down"></div>
                         </a>
                     </li>

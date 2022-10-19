@@ -19,8 +19,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('FirstName')->nullable();
             $table->string('LastName')->nullable();
-            $table->string('Job')->nullable();
-            $table->integer('Role')->nullable();
             $table->integer('IsActive')->nullable();
             $table->date('DOB')->nullable();
             $table->text('Avatar')->nullable();
@@ -34,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        // User::create(['FirstName' => 'AbdulWahab','LastName' => 'Qarizada','Job' => 'Developer','dob'=>'1993-12-14','email' => 'info@qamarcharity.org','password' => Hash::make('123456'),'email_verified_at'=>'2022-01-02 17:04:58','avatar' => 'images/avatar-1.jpg','created_at' => now(),]);
+     User::create(['FirstName' => 'AbdulWahab','LastName' => 'Qarizada','IsActive' => 1,'dob'=>'1993-12-14','email' => 'ab_wahabqarizada@outlook.com','password' => Hash::make('khan@!@#123'),'email_verified_at'=>'2022-01-02 17:04:58','avatar' => 'images/avatar-1.jpg','created_at' => now(),]);
     }
 
     /**

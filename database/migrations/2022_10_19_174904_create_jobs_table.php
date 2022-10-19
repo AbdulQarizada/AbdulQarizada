@@ -13,22 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('scholarships', function (Blueprint $table) {
+        Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('ScholarshipName')->nullable();
-            $table->integer('ScholarshipType_ID')->nullable();
-            $table->integer('Country_ID')->nullable();
+            $table->string('Title')->nullable();
+            $table->integer('Organization')->nullable();
             $table->string('StartDate')->nullable();
             $table->string('EndDate')->nullable();
-            $table->integer('Seats')->nullable();
+            $table->integer('NumberOfVacancies')->nullable();
+            $table->string('Advertiser')->nullable();
             $table->string('Status')->nullable();
             $table->integer('Created_By')->nullable();
             $table->integer('Owner')->nullable();
-
-
-
-
-
             $table->timestamps();
         });
     }
@@ -40,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scholarships');
+        Schema::dropIfExists('jobs');
     }
 };

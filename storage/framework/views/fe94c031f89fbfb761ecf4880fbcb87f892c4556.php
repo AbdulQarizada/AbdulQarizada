@@ -25,7 +25,7 @@
 <div class="col-xl-12">
     <div class="col-xl-12">
         <div class="row">
-            <div class="col-md-3 mb-2">
+            <div class="col-md-4 mb-2">
                 <a href="<?php echo e(route('IndexJobsManagement')); ?>">
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
@@ -53,7 +53,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 mb-2">
+            <!-- <div class="col-md-3 mb-2">
                 <a >
                     <div class="card-one mini-stats-wid border border-secondary">
                         <div class="card-body">
@@ -192,7 +192,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
         <!-- end row -->
 
