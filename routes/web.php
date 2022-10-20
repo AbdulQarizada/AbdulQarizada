@@ -66,8 +66,10 @@ Route::get('/AbdulWahabQarizada', [App\Http\Controllers\AbdulWahabQarizada\HomeC
 // JobManagment
 // Index
 Route::get('/AbdulWahabQarizada/JobsManagement/Operations', [App\Http\Controllers\AbdulWahabQarizada\JobsManagement\OperationsController::class, 'Index'])->name('IndexJobsManagement');
-// List
+// List All Jobs
 Route::get('/AbdulWahabQarizada/JobsManagement/Operations/All', [App\Http\Controllers\AbdulWahabQarizada\JobsManagement\OperationsController::class, 'All'])->name('AllJobs');
+// Refresh All Jobs
+Route::get('/AbdulWahabQarizada/JobsManagement/Operations/Refresh', [App\Http\Controllers\AbdulWahabQarizada\JobsManagement\OperationsController::class, 'Refresh'])->name('RefreshAllJobs');
 
 
 

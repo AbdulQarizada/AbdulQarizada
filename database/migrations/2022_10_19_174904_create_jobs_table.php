@@ -15,11 +15,33 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('Title')->nullable();
-            $table->integer('Organization')->nullable();
-            $table->string('StartDate')->nullable();
-            $table->string('EndDate')->nullable();
-            $table->integer('NumberOfVacancies')->nullable();
+            $table->string('PositionID')->nullable();
+            $table->string('PositionName')->nullable();
+            $table->string('CanApplyOnline')->nullable();
+            $table->string('CompanyID')->nullable();
+            $table->string('CompanyName')->nullable();
+            $table->longText('CompanyProfile')->nullable();
+            $table->string('ContractType')->nullable();
+
+            $table->string('PublishDate')->nullable();
+            $table->string('RefreshDate')->nullable();
+            $table->string('ExpireDate')->nullable();
+            $table->string('ExpiringDuration')->nullable();
+            // $table->string('FunctionalArea')->nullable();
+            $table->string('Gender')->nullable();
+            $table->string('IsExtensible')->nullable();
+            $table->string('LocationsCountry')->nullable();
+            $table->string('LocationsProvince')->nullable();
+            $table->string('MinimumEducation')->nullable();
+            $table->string('NumberOfVaccancies')->nullable();
+
+            $table->string('PostingStatus')->nullable();
+            $table->string('SubmissionEmails')->nullable();
+            $table->longText('SubmissionGuideline')->nullable();
+            $table->longText('Summary')->nullable();
+            $table->string('WorkType')->nullable();
+            $table->string('MinYearsOfExperience')->nullable();
+            $table->string('ViewsCount')->nullable();
             $table->string('Advertiser')->nullable();
             $table->string('Status')->nullable();
             $table->integer('Created_By')->nullable();

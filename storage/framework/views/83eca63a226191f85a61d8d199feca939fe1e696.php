@@ -19,7 +19,7 @@
 </div>
 <div class="row">
     <div class="col-12 ">
-        <a href="javascript:window.location.reload();" class="btn btn-success btn-lg waves-effect  waves-light mb-3 float-end btn-rounded"><i class="mdi mdi-cloud-refresh me-1"></i>Refresh</a>
+        <a href="<?php echo e(route('RefreshAllJobs')); ?>" class="btn btn-success btn-lg waves-effect  waves-light mb-3 float-end btn-rounded"><i class="mdi mdi-cloud-refresh me-1"></i>Refresh</a>
     </div>
 </div>
 
@@ -36,12 +36,12 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>FirstName</th>
-                                <th>Address</th>
-                                <th>Phone Numbers</th>
-                                <th>Family Status</th>
-                                <th>Status</th>
-                                <th>Created By</th>
+                                <th>Position & Company</th>
+                                <th>Dates</th>
+                                <th>Experience</th>
+                                <th>Location</th>
+                                <th>Email</th>
+                                <th>Advertiser</th>
                                 <th>Actions</th>
 
                             </tr>
@@ -51,129 +51,47 @@
                         <tbody>
                             <?php $__currentLoopData = $jobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                                <td><?php echo e($job->id); ?></td>
-                                <!-- <td><?php echo e($loop->iteration); ?></td> -->
+                                <!-- <td><?php echo e($job->id); ?></td> -->
+                                <td><?php echo e($loop->iteration); ?></td>
                                 <td>
-                                    <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> FirstName); ?> <?php echo e($job -> LastName); ?></a></h5>
-                                    <p class="text-muted mb-0">QCC-<?php echo e($job -> QCC); ?></p>
+                                <div>
+                                        <span class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> PositionName); ?></a></span>
+                                        <span class="text-muted mb-0 badge badge-soft-danger font-size-14 rounded"><?php echo e($job -> NumberOfVaccancies); ?></span>
+                                        <br />
+                                        <span class="text-muted mb-0"><?php echo e($job -> CompanyName); ?></span>
+                                        <span class="text-muted mb-0 badge badge-soft-info font-size-14 rounded"><?php echo e($job -> Advertiser); ?></span>
+
+                                    </div>
+                              </td>
+                                <td>
+                                    <div>
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-danger"><?php echo e($job -> ExpireDate); ?></a></h5>
+                                        <p class="text-muted mb-0 badge badge-soft-warning"><?php echo e($job -> PublishDate); ?></p>
+                                        <p class="text-muted mb-0 badge badge-soft-danger"><?php echo e($job -> ExpiringDuration); ?> Days</p>
+                                    </div>
+                                    <!-- -> format("j F Y") -->
+
                                 </td>
                                 <td>
                                     <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> ProvinceName); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($job -> DistrictName); ?></p>
-
+                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark badge badge-soft-primary"><?php echo e($job -> MinimumEducation); ?></a></h5>
+                                        <p class="text-muted mb-0 badge badge-soft-warning"><?php echo e($job -> MinYearsOfExperience); ?> Years</p>
                                     </div>
                                 </td>
                                 <td>
-                                    <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark badge badge-soft-primary"><?php echo e($job -> PrimaryNumber); ?></a></h5>
-                                        <p class="text-muted mb-0 badge badge-soft-warning"><?php echo e($job -> SecondaryNumber); ?></p>
-                                        <p class="text-muted mb-0 badge badge-soft-danger"><?php echo e($job -> RelativeNumber); ?></p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> FamilyStatus); ?></a></h5>
-                                        <?php if( $job -> LevelPoverty == 1): ?>
-                                        <i class="bx bxs-star text-warning font-size-12"></i>
-                                        <i class="bx bxs-star text-secondary font-size-14"></i>
-                                        <i class="bx bxs-star text-secondary font-size-16"></i>
-                                        <i class="bx bxs-star text-secondary font-size-18"></i>
-                                        <i class="bx bxs-star text-secondary font-size-20"></i>
+                                    <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> LocationsProvince); ?></a></h5>
+                                    <p class="text-muted mb-0"><?php echo e($job -> LocationsCountry); ?></p>
 
-                                        <?php endif; ?>
-                                        <?php if( $job -> LevelPoverty == 2): ?>
-                                        <i class="bx bxs-star text-warning font-size-12"></i>
-                                        <i class="bx bxs-star text-warning font-size-14"></i>
-                                        <i class="bx bxs-star text-secondary font-size-16"></i>
-                                        <i class="bx bxs-star text-secondary font-size-18"></i>
-                                        <i class="bx bxs-star text-secondary font-size-20"></i>
-                                        <?php endif; ?>
-                                        <?php if( $job -> LevelPoverty == 3): ?>
-                                        <i class="bx bxs-star text-warning font-size-12"></i>
-                                        <i class="bx bxs-star text-warning font-size-14"></i>
-                                        <i class="bx bxs-star text-warning font-size-16"></i>
-                                        <i class="bx bxs-star text-secondary font-size-18"></i>
-                                        <i class="bx bxs-star text-secondary font-size-20"></i>
-                                        <?php endif; ?>
-                                        <?php if( $job -> LevelPoverty == 4): ?>
-                                        <i class="bx bxs-star text-warning font-size-12"></i>
-                                        <i class="bx bxs-star text-warning font-size-14"></i>
-                                        <i class="bx bxs-star text-warning font-size-16"></i>
-                                        <i class="bx bxs-star text-warning font-size-18"></i>
-                                        <i class="bx bxs-star text-secondary font-size-20"></i>
-                                        <?php endif; ?>
-                                        <?php if( $job -> LevelPoverty == 5): ?>
-                                        <i class="bx bxs-star text-warning font-size-12"></i>
-                                        <i class="bx bxs-star text-warning font-size-14"></i>
-                                        <i class="bx bxs-star text-warning font-size-16"></i>
-                                        <i class="bx bxs-star text-warning font-size-18"></i>
-                                        <i class="bx bxs-star text-warning font-size-20"></i>
-                                        <?php endif; ?>
-                                    </div>
+
                                 </td>
 
                                 <td>
-                                    <div>
-
-
-                                        <?php if($job -> Status == 'Pending'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-secondary"><?php echo e($job -> Status); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($qamjobarcarecard -> created_at -> format("d-m-Y")); ?></p>
-
-                                        <?php endif; ?>
-
-                                        <?php if($job -> Status == 'Approved'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success"><?php echo e($job -> Status); ?> </a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
-
-                                        <?php endif; ?>
-
-                                        <?php if($job -> Status == 'Rejected'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-danger"><?php echo e($job -> Status); ?> </a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
-
-                                        <?php endif; ?>
-
-
-
-                                        <?php if($job -> Status == 'ReInitiated'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-info"><?php echo e($job -> Status); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
-
-                                        <?php endif; ?>
-
-                                        <?php if($job -> Status == 'Released'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-success"><?php echo e($job -> Status); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
-
-                                        <?php endif; ?>
-
-                                        <?php if($job -> Status == 'Printed'): ?>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="badge badge-soft-dark"><?php echo e($job -> Status); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($job -> created_at -> format("d-m-Y")); ?></p>
-
-                                        <?php endif; ?>
-
-                                    </div>
-                                </td>
+                                <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job -> SubmissionEmails); ?></a></h5>
+                                    <p class="text-muted mb-0"><?php echo e($job -> SubmissionEmails); ?></p>
+                            </td>
                                 <td>
-                                    <?php if( $job -> Created_By !=""): ?>
+                                <h5 class="font-size-14 mb-1"><a href="#" class="text-muted mb-0 badge badge-soft-info "><?php echo e($job -> Advertiser); ?></a></h5>
 
-                                    <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark"><?php echo e($job ->  UFirstName); ?> <?php echo e($job ->  ULastName); ?></a></h5>
-                                        <p class="text-muted mb-0"><?php echo e($job ->  UJob); ?></p>
-
-                                    </div>
-                                    <?php endif; ?>
-                                    <?php if( $job -> Created_By ==""): ?>
-
-                                    <div>
-                                        <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">Anonymous</a></h5>
-                                        <p class="text-muted mb-0">Requested</p>
-
-                                    </div>
-                                    <?php endif; ?>
                                 </td>
                                 <td>
                                     <div class="d-flex flex-wrap gap-2">

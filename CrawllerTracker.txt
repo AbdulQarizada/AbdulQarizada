@@ -1,0 +1,5 @@
+Website: https://medium.com/geekculture/easy-way-building-web-crawlers-using-laravel-7bebb02c2e4e
+- composer require spatie/crawler
+- composer require spatie/browsershot
+- npm install puppeteer
+
