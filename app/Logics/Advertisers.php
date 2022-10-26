@@ -16,7 +16,7 @@ class Advertisers
     $datas = Http::get('https://www.jobs.af/api/v2.5/jobs/latest?filter={"limit":1200000,"skip":0}')->collect();
     foreach ($datas as $data)
     {
-      $InsertedJobs = Jobs::where("PositionID", "=", $data['id'])->get();;
+      $InsertedJobs = Jobs::find($data['id']);
       if(!$InsertedJobs)
       {
 
