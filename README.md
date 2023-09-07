@@ -1,8 +1,5 @@
 - 👋 Hi, I’m @AbdulQarizada
-- 👀 I’m interested in Nothing!
-- 🌱 I’m currently learning, Nothing!
-- 💞️ I’m looking to collaborate on, Nothing!
-- 📫 How to reach me ..., WhatsApp: +93782094314!
+- 👀 I’m interested in A.I!
 
 <!---
 AbdulQarizada/AbdulQarizada is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
